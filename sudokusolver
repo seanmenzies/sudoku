@@ -72,6 +72,7 @@ def find_poss_nums(board, coordinates):
             else:
                 continue
         # after each iteration, save remaining possible numbers to dict with key = coord, value = poss nums
+        # coordinates are simply a string of two digits
         nums_dict[f'{coord[1]}{coord[0]}'] = nums
     return nums_dict
 
@@ -87,6 +88,7 @@ def solve_puzzle(board):
         # check possible numbers. If there is only one, insert into the correct coordinate
         for k, v in moves.items():
             if len(v) == 1:
+                # convert 2-digit strings to ints and use as indexes/coordinates
                 board[int(k[0])][int(k[1])] = ''.join(v)
         # count remaining empty squares i.e. with '_' instead of a number
         count = 0
