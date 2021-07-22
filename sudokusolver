@@ -99,7 +99,7 @@ def solve_puzzle(board):
         # when no empty squares remain, break loop
         if count == 0:
             completed = True
-    # print empty line then completed board
+    # print empty line then completed board; indent each line below once to see incremental completion
     print('')
     for a in board:
         print(*a)
